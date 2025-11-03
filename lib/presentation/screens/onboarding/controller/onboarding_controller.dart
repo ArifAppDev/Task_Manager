@@ -5,6 +5,11 @@ import 'package:task_manager/core/utils/static_string/static_strings.dart';
 
 class OnboardingController extends GetxController {
   RxInt currentIndex = 0.obs;
+  RxInt pageIndex = 0.obs;
+
+  void onpageChanged(int index) {
+    pageIndex.value = index;
+  }
 
   void updateIndex(int index) {
     currentIndex.value = index;

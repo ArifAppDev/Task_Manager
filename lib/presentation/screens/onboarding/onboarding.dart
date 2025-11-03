@@ -6,6 +6,7 @@ import 'package:task_manager/core/routes/app_routes.dart';
 import 'package:task_manager/core/utils/colors/app_colors.dart';
 import 'package:task_manager/core/utils/static_string/static_strings.dart';
 import 'package:task_manager/presentation/screens/onboarding/controller/onboarding_controller.dart';
+import 'package:task_manager/presentation/widgets/custom_button_onboarding.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -45,6 +46,8 @@ class OnboardingScreen extends StatelessWidget {
                 child: PageView.builder(
                   controller: onboardingController.pageController,
                   itemCount: onboardingController.onboardingItem.length,
+                  onPageChanged: onboardingController.onpageChanged,
+
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
@@ -95,37 +98,24 @@ class OnboardingScreen extends StatelessWidget {
                         ),
 
                         SizedBox(height: 200),
-                        GestureDetector(
-                          onTap: () {
-                            if (onboardingController.pageController.page ==
-                                onboardingController.onboardingItem.length -
-                                    1) {
-                              Get.toNamed(AppRoutes.loginscreen);
-                            } else {
-                              onboardingController.pageController.nextPage(
-                                duration: Duration(seconds: 1),
-                                curve: Curves.easeInOut,
-                              );
-                            }
-                          },
-                          child: Container(
-                            height: 44,
-                            width: 358,
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryColor,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(6),
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Next >",
-                                style: TextStyle(
-                                  color: AppColors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Obx(
+                            () => CustomButton(
+                              title: onboardingController.pageIndex.value == 2
+                                  ? 'Continue'
+                                  : 'Next',
+                              onTap: () {
+                                if (onboardingController.pageController.page ==
+                                    2) {
+                                  Get.toNamed(AppRoutes.loginscreen);
+                                } else {
+                                  onboardingController.pageController.nextPage(
+                                    duration: Duration(seconds: 1),
+                                    curve: Curves.easeInOut,
+                                  );
+                                }
+                              },
                             ),
                           ),
                         ),

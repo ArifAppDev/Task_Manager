@@ -11,5 +11,9 @@ class AppColors {
   static const lightGrey = Color(0xffD9D9D9);
   static const dropshodow = Color(0xff000000);
   static const softbrandColor = Color(0xffF7FFEF);
-  static const shadow = Color(0xfff2f2f2);
+  static const shadow = Color(0xfff5efef);
+  static const appbackround = Color(0xffFAFBF9);
+  static const checkBoxIconColor = Color(0xff22C55E);
+  static const colorsGrey = Color(0xff344054);
+  static const slate = Color(0xff64748B);
 }
