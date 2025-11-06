@@ -2,33 +2,52 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 import 'package:get/instance_manager.dart';
+import 'package:task_manager/core/general_controller/general_controller.dart';
 
-import 'package:task_manager/core/utils/colors/app_colors.dart';
-import 'package:task_manager/presentation/screens/auth/login/controller/password_visibility_controller.dart';
+import 'package:task_manager/utils/app_color/app_colors.dart';
+import 'package:task_manager/utils/static_string/static_strings.dart';
 
 class CustomTextfromFieldPassword extends StatelessWidget {
-  const CustomTextfromFieldPassword({super.key});
+  const CustomTextfromFieldPassword({
+    super.key,
+    required this.passwordcontroller,
+  });
+
+  final TextEditingController passwordcontroller;
 
   @override
   Widget build(BuildContext context) {
-    //========= dependency Injection==========
-    final PasswordVisibilityController passwordController =
-        Get.find<PasswordVisibilityController>();
+    var generatcontroller = Get.find<GeneralController>();
 
     return Obx(
       () => TextFormField(
-        obscureText: passwordController.isSecure.value,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "Enter your password";
+          } else if (!StaticStrings.passwordRegexp.hasMatch(value)) {
+            return "Password must have 6+ chars, 1 uppercase, 1 number & 1 symbol";
+          } else {
+            return null;
+          }
+        },
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+
+        controller: passwordcontroller,
+        obscureText: generatcontroller.isSecure.value,
         decoration: InputDecoration(
           filled: true,
           fillColor: AppColors.softbrandColor,
+          focusColor: AppColors.primaryColor,
+          enabled: true,
+
           hintText: "Enter you password",
           suffixIcon: IconButton(
             onPressed: () {
-              passwordController.isSecure.value =
-                  !passwordController.isSecure.value;
+              generatcontroller.isSecure.value =
+                  !generatcontroller.isSecure.value;
             },
             icon: Icon(
-              passwordController.isSecure.value
+              generatcontroller.isSecure.value
                   ? Icons.visibility_off_outlined
                   : Icons.visibility_outlined,
               color: AppColors.slate,
@@ -39,18 +58,18 @@ class CustomTextfromFieldPassword extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(6),
 
-            borderSide: BorderSide(color: AppColors.shadow, width: 3.0),
+            borderSide: BorderSide(color: AppColors.shadow, width: 1),
           ),
 
           // when the text field is focushed
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(6),
-            borderSide: BorderSide(color: AppColors.shadow, width: 3.0),
+            borderSide: BorderSide(color: AppColors.primaryColor, width: 1),
           ),
 
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(6),
-            borderSide: BorderSide(color: AppColors.shadow, width: 3.0),
+            borderSide: BorderSide(color: AppColors.shadow, width: 1),
           ),
         ),
       ),

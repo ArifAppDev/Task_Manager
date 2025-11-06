@@ -1,9 +1,14 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_manager/core/custom_assets/custom_images/custom_images.dart';
-import 'package:task_manager/core/utils/static_string/static_strings.dart';
+import 'package:task_manager/utils/static_string/static_strings.dart';
 
-class OnboardingController extends GetxController {
+class GeneralController extends GetxController {
+  // check box bool
+  RxBool isCheck = false.obs;
+  // password visibility bool
+  RxBool isSecure = true.obs;
+
   RxInt currentIndex = 0.obs;
   RxInt pageIndex = 0.obs;
 
@@ -17,7 +22,7 @@ class OnboardingController extends GetxController {
 
   final PageController pageController = PageController();
 
-  RxList onboardingItem = [
+  RxList<Map<String, String>> onboardingItem = [
     {
       'img': CustomImages.onboarding1,
       'title': StaticStrings.manageEverything,

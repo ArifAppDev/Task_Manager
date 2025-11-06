@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
-import 'package:task_manager/core/utils/colors/app_colors.dart';
-import 'package:task_manager/core/utils/static_string/static_strings.dart';
+
 import 'package:task_manager/presentation/widgets/custom_button_onboarding.dart';
 import 'package:task_manager/presentation/widgets/custom_textfrom_field.dart';
+import 'package:task_manager/utils/app_color/app_colors.dart';
+import 'package:task_manager/utils/static_string/static_strings.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -53,7 +55,10 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 6),
 
                 // First name
-                CustomTextfromField(hinttext: 'e.g. Kristin '),
+                CustomTextfromField(
+                  hinttext: 'e.g. Kristin ',
+                  emailcontroller: emailController,
+                ),
                 SizedBox(height: 24),
 
                 // last name
@@ -67,7 +72,10 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
 
-                CustomTextfromField(hinttext: 'e.g. Cooper'),
+                CustomTextfromField(
+                  hinttext: 'e.g. Cooper',
+                  emailcontroller: emailController,
+                ),
                 SizedBox(height: 24),
 
                 // Email address
@@ -83,6 +91,7 @@ class SignUpScreen extends StatelessWidget {
 
                 CustomTextfromField(
                   hinttext: 'e.g. kristin.cooper@example.com',
+                  emailcontroller: emailController,
                 ),
                 SizedBox(height: 24),
                 // Address
@@ -98,6 +107,7 @@ class SignUpScreen extends StatelessWidget {
 
                 CustomTextfromField(
                   hinttext: 'e.g. 1234 Elm Street, Springfield, IL',
+                  emailcontroller: emailController,
                 ),
                 SizedBox(height: 24),
 
@@ -112,7 +122,10 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
 
-                CustomTextfromField(hinttext: 'Enter your Password'),
+                CustomTextfromField(
+                  hinttext: 'Enter your Password',
+                  emailcontroller: emailController,
+                ),
                 SizedBox(height: 24),
                 // Confirm Password
                 Text(
@@ -124,7 +137,10 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 6),
-                CustomTextfromField(hinttext: 'Confirm Password'),
+                CustomTextfromField(
+                  hinttext: 'Confirm Password',
+                  emailcontroller: emailController,
+                ),
                 SizedBox(height: 6),
 
                 Row(

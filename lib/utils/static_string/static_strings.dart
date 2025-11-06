@@ -1,5 +1,4 @@
 class StaticStrings {
-  //=================onboarding========================
   static const String manageEverything = 'Manage Everything in One Place';
   static const String createCatagorize =
       'Create, categorize, and keep track of all your personal and work tasks effortlessly — right from your dashboard.';
@@ -44,4 +43,10 @@ class StaticStrings {
       "Create a secure password to protect your account and get started seamlessly!";
   static const String newpassword = 'New Password';
   static const String newconfirmPassword = 'New Confirm password';
+  static RegExp emailRegexp = RegExp(
+    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+  );
+  static RegExp passwordRegexp = RegExp(
+    r'^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$&*~]).{6,}$',
+  );
 }
