@@ -16,4 +16,6 @@ class AppColors {
   static const checkBoxIconColor = Color(0xff22C55E);
   static const colorsGrey = Color(0xff344054);
   static const slate = Color(0xff64748B);
+  static const redfifty = Color(0xffFEF2F2);
+  static const redfifhundred = Color(0xffEF4444);
 }

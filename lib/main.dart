@@ -4,7 +4,6 @@ import 'package:task_manager/core/dependency_injection/di.dart';
 import 'package:task_manager/core/routes/app_routes.dart';
 
 void main() {
-  // dependency Injection
   DependencyInjection().dependencies();
   runApp(const MyApp());
 }

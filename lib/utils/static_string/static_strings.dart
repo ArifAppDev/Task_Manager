@@ -53,4 +53,8 @@ class StaticStrings {
   static const String greetsmssage = "Hello";
   static const String welcometotask = "Welcome to Task Manager ";
   static const String mytask = "My Tasks";
+  static const String tasktitle = "Task Title";
+  static const String taskDescription = "Task Description";
+  static const String deleteTask = "Delete Task";
+  static const String edittask = "Edit Task";
 }

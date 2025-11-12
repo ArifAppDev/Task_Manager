@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_manager/core/routes/app_routes.dart';
+import 'package:task_manager/presentation/screens/home/home_controller/home_controller.dart';
 import 'package:task_manager/presentation/screens/home/inner_widget/home_card/home_cart.dart';
 
 import 'package:task_manager/presentation/screens/home/inner_widget/profile_section/profile_section.dart';
+
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 
@@ -10,6 +14,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // This allows access to the controller state's and logic
+    final HomeController homeController = Get.find<HomeController>();
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -32,7 +39,26 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 10),
 
             //==========home card===============
-            HomeCard(),
+
+            //================ list view builder =====================
+            Expanded(
+              child: ListView.builder(
+                itemCount: homeController.taskDetails.length,
+                itemBuilder: (context, index) {
+                  //       //==========home card===============
+                  return HomeCard(
+                    onTap: () {
+                      Get.toNamed(
+                        AppRoutes.taskscreen,
+                        arguments: {'index': index},
+                      );
+                    },
+                    title: homeController.taskDetails[index]['title'],
+                    description: homeController.taskDetails[index]['des'],
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
