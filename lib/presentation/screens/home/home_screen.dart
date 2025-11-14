@@ -18,17 +18,17 @@ class HomeScreen extends StatelessWidget {
     final HomeController homeController = Get.find<HomeController>();
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //======================== profile section =============================
-            ProfileSection(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          //======================== profile section =============================
+          ProfileSection(),
 
-            SizedBox(height: 24),
+          SizedBox(height: 24),
 
-            Text(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
               StaticStrings.mytask,
               style: TextStyle(
                 fontSize: 18,
@@ -36,18 +36,20 @@ class HomeScreen extends StatelessWidget {
                 color: AppColors.bgblack,
               ),
             ),
-            SizedBox(height: 10),
+          ),
 
-            //==========home card===============
+          //==========home card===============
 
-            //================ list view builder =====================
-            Expanded(
-              child: Obx(
-                () => ListView.builder(
-                  itemCount: homeController.taskDetails.length,
-                  itemBuilder: (context, index) {
-                    //       //==========home card===============
-                    return HomeCard(
+          //================ list view builder =====================
+          Expanded(
+            child: Obx(
+              () => ListView.builder(
+                itemCount: homeController.taskDetails.length,
+                itemBuilder: (context, index) {
+                  //       //==========home card===============
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: HomeCard(
                       onTap: () {
                         Get.toNamed(
                           AppRoutes.taskdetailsscreen,
@@ -56,13 +58,13 @@ class HomeScreen extends StatelessWidget {
                       },
                       title: homeController.taskDetails[index]['title'],
                       description: homeController.taskDetails[index]['des'],
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
