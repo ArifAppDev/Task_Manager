@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 import 'package:task_manager/core/general_controller/general_controller.dart';
 import 'package:task_manager/core/routes/app_routes.dart';
 
-import 'package:task_manager/presentation/widgets/custom_button.dart';
+import 'package:task_manager/presentation/widgets/custom_button/custom_button.dart';
 import 'package:task_manager/presentation/widgets/custom_divider.dart';
-import 'package:task_manager/presentation/widgets/custom_textform_field.dart';
 
-import 'package:task_manager/presentation/widgets/custom_password_textfield.dart';
+import 'package:task_manager/presentation/widgets/custom_password_textfrom_field/custom_password_textfield.dart';
+import 'package:task_manager/presentation/widgets/custom_textform_field/custom_text_form_field.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 

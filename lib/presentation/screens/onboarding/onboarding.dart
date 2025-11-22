@@ -5,7 +5,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:task_manager/core/general_controller/general_controller.dart';
 import 'package:task_manager/core/routes/app_routes.dart';
 
-import 'package:task_manager/presentation/widgets/custom_button_onboarding.dart';
+import 'package:task_manager/presentation/widgets/custom_button/custom_button_onboarding.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 

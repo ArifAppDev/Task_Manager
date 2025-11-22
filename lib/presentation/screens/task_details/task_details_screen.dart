@@ -7,7 +7,7 @@ import 'package:get/route_manager.dart';
 import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
 import 'package:task_manager/presentation/screens/home/home_controller/home_controller.dart';
 
-import 'package:task_manager/presentation/widgets/custom_app_bar.dart';
+import 'package:task_manager/presentation/widgets/custom_app_bar/custom_app_bar.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 

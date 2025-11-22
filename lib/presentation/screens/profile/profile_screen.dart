@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
 import 'package:task_manager/core/custom_assets/custom_images/custom_images.dart';
 
-import 'package:task_manager/presentation/widgets/profile_custom_button.dart';
+import 'package:task_manager/presentation/widgets/profile_custom_button/profile_custom_button.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 

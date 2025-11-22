@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:task_manager/core/routes/app_routes.dart';
-import 'package:task_manager/presentation/widgets/custom_button.dart';
-import 'package:task_manager/presentation/widgets/custom_textform_field.dart';
+import 'package:task_manager/presentation/widgets/custom_button/custom_button.dart';
+import 'package:task_manager/presentation/widgets/custom_textform_field/custom_text_form_field.dart';
+
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 
