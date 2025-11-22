@@ -56,4 +56,5 @@ class StaticStrings {
   static const String taskDescription = "Task Description";
   static const String deleteTask = "Delete Task";
   static const String edittask = "Edit Task";
+  static const String more = "More";
 }

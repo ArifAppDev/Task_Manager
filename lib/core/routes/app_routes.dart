@@ -9,6 +9,7 @@ import 'package:task_manager/presentation/screens/edit_task/edit_task_screen.dar
 import 'package:task_manager/presentation/screens/home/home_screen.dart';
 
 import 'package:task_manager/presentation/screens/onboarding/onboarding.dart';
+import 'package:task_manager/presentation/screens/profile/profile_screen.dart';
 import 'package:task_manager/presentation/screens/splash_screen/splash_screen.dart';
 
 class AppRoutes {
@@ -26,6 +27,7 @@ class AppRoutes {
   static const String taskdetailsscreen = '/taskdetailsscreen';
   static const String addtaskscreen = '/addtaskscreen';
   static const String editTaskscreen = '/editTaskscreen';
+  static const String profilescreen = '/profilescreen';
 
   static List<GetPage> routes = [
     GetPage(name: splashscreen, page: () => SplashScreen()),
@@ -41,5 +43,8 @@ class AppRoutes {
     GetPage(name: homescreen, page: () => HomeScreen()),
     GetPage(name: addtaskscreen, page: () => AddTaskScreen()),
     GetPage(name: editTaskscreen, page: () => EditTaskScreen()),
+
+    // =================== profile screen =================
+    GetPage(name: profilescreen, page: () => ProfileScreen()),
   ];
 }

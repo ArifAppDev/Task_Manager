@@ -7,4 +7,5 @@ class CustomImages {
   static const String onboarding2 = "$basepathImg/onboarding2.png";
   static const String onboarding3 = "$basepathImg/onboarding3.png";
   static const String shape = "$basepathImg/shape.png";
+  static const String profilebackround = '$basepathImg/profbackround.png';
 }
