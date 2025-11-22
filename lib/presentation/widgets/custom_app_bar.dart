@@ -3,7 +3,7 @@ import 'package:task_manager/utils/app_color/app_colors.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String appbarName;
-  final Function onTap;
+  final VoidCallback onTap;
   const CustomAppBar({
     super.key,
     required this.appbarName,
@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       children: [
         GestureDetector(
-          onTap: onTap(),
+          onTap: onTap,
           child: Container(
             padding: EdgeInsets.all(9),
             height: 40,

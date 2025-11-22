@@ -6,7 +6,7 @@ import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
 import 'package:task_manager/core/routes/app_routes.dart';
 
 import 'package:task_manager/presentation/widgets/custom_button_onboarding.dart';
-import 'package:task_manager/presentation/widgets/custom_email_textfield.dart';
+import 'package:task_manager/presentation/widgets/custom_textform_field.dart';
 import 'package:task_manager/presentation/widgets/custom_password_textfield.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
@@ -60,7 +60,7 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 6),
 
                 // First name
-                CustomEmailTextField(
+                CustomTextFormField(
                   hinttext: 'e.g. Kristin ',
                   emailcontroller: emailController,
                 ),
@@ -77,7 +77,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
 
-                CustomEmailTextField(
+                CustomTextFormField(
                   hinttext: 'e.g. Cooper',
                   emailcontroller: emailController,
                 ),
@@ -94,7 +94,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
 
-                CustomEmailTextField(
+                CustomTextFormField(
                   hinttext: 'e.g. kristin.cooper@example.com',
                   emailcontroller: emailController,
                 ),
@@ -109,7 +109,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 6),
-                CustomEmailTextField(
+                CustomTextFormField(
                   hinttext: 'e.g. 1234 Elm Street, Springfield, IL',
                   emailcontroller: emailController,
                 ),

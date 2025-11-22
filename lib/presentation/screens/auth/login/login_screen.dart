@@ -7,7 +7,7 @@ import 'package:task_manager/core/routes/app_routes.dart';
 
 import 'package:task_manager/presentation/widgets/custom_button.dart';
 import 'package:task_manager/presentation/widgets/custom_divider.dart';
-import 'package:task_manager/presentation/widgets/custom_email_textfield.dart';
+import 'package:task_manager/presentation/widgets/custom_textform_field.dart';
 
 import 'package:task_manager/presentation/widgets/custom_password_textfield.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: 6),
 
                   // custom Text from field
-                  CustomEmailTextField(
+                  CustomTextFormField(
                     hinttext: 'michelle.rivera@example.com',
                     emailcontroller: emailController,
                   ),

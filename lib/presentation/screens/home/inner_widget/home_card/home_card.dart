@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
 import 'package:task_manager/core/custom_assets/custom_images/custom_images.dart';
+import 'package:task_manager/presentation/screens/home/home_controller/home_controller.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 
 class HomeCard extends StatelessWidget {
-  final String title;
-  final String description;
   final Function() onTap;
+  final int index;
 
-  const HomeCard({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.onTap,
-  });
+  const HomeCard({super.key, required this.onTap, required this.index});
 
   @override
   Widget build(BuildContext context) {
+    var homeController = Get.find<HomeController>();
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -83,7 +81,7 @@ class HomeCard extends StatelessWidget {
                   SvgPicture.asset(CustomIcons.taskicon),
                   SizedBox(height: 16),
                   Text(
-                    title,
+                    homeController.taskDetails[index]["title"],
                     style: TextStyle(
                       color: AppColors.primaryText,
                       fontSize: 14,
@@ -94,7 +92,7 @@ class HomeCard extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Text(
-                      description,
+                      homeController.taskDetails[index]["des"],
                       style: TextStyle(
                         color: AppColors.secondaryText,
                         fontSize: 14,

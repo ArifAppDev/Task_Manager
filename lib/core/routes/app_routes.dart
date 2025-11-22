@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
+import 'package:task_manager/presentation/screens/add_task/add_task_screen.dart';
 import 'package:task_manager/presentation/screens/auth/email_verify/email_veridy_screen.dart';
 import 'package:task_manager/presentation/screens/auth/login/login_screen.dart';
 import 'package:task_manager/presentation/screens/auth/new_password/new_password_screen.dart';
 import 'package:task_manager/presentation/screens/auth/otp_verify/otp_verify_screen.dart';
 import 'package:task_manager/presentation/screens/auth/sign_up/sign_up.dart';
+import 'package:task_manager/presentation/screens/edit_task/edit_task_screen.dart';
 import 'package:task_manager/presentation/screens/home/home_screen.dart';
-
-import 'package:task_manager/presentation/screens/home/inner_widget/task_section/task_details_screen.dart';
 
 import 'package:task_manager/presentation/screens/onboarding/onboarding.dart';
 import 'package:task_manager/presentation/screens/splash_screen/splash_screen.dart';
@@ -24,6 +24,8 @@ class AppRoutes {
 
   static const String homescreen = '/homescreen';
   static const String taskdetailsscreen = '/taskdetailsscreen';
+  static const String addtaskscreen = '/addtaskscreen';
+  static const String editTaskscreen = '/editTaskscreen';
 
   static List<GetPage> routes = [
     GetPage(name: splashscreen, page: () => SplashScreen()),
@@ -35,8 +37,9 @@ class AppRoutes {
     GetPage(name: otpverifyscreen, page: () => OtpVeridyScreen()),
     GetPage(name: newpassscreen, page: () => NewPasswordScreen()),
 
-    //========================
+    //======================== home screen ===============
     GetPage(name: homescreen, page: () => HomeScreen()),
-    GetPage(name: taskdetailsscreen, page: () => TaskDetailsScreen()),
+    GetPage(name: addtaskscreen, page: () => AddTaskScreen()),
+    GetPage(name: editTaskscreen, page: () => EditTaskScreen()),
   ];
 }
