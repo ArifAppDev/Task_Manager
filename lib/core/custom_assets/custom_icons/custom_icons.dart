@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class CustomIcons {
   //=================basepath==================
   static const String basepathIcon = "assets/icons";
@@ -13,8 +15,11 @@ class CustomIcons {
   static const String helpsupport = '$basepathIcon/help_support.svg';
   static const String location = '$basepathIcon/logout.svg';
   static const String privacy = '$basepathIcon/privacy.svg';
-  static const String profile = '$basepathIcon/profile.svg';
+  static const String cardprofile = '$basepathIcon/profilecard.svg';
   static const String settings = '$basepathIcon/settings.svg';
   static const String terms = '$basepathIcon/terms_condition.svg';
   static const String logout = '$basepathIcon/logout.svg';
+  static const String addtask = '$basepathIcon/addtask.svg';
+  static const String home = '$basepathIcon/home.svg';
+  static const String profile = '$basepathIcon/profile.svg';
 }

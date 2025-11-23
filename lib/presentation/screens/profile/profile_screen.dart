@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
 import 'package:task_manager/core/custom_assets/custom_images/custom_images.dart';
+import 'package:task_manager/presentation/widgets/custom_nav_bar/custom_nav_bar.dart';
 
 import 'package:task_manager/presentation/widgets/profile_custom_button/profile_custom_button.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
@@ -13,6 +14,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: CustomNavBar(selectedIndex: 2),
       body: Column(
         children: [
           SizedBox(height: 40),
@@ -54,7 +56,7 @@ class ProfileScreen extends StatelessWidget {
                 // =========== my Profile ================
                 ProfileCustomButton(
                   title: 'My ProFile',
-                  icon: CustomIcons.profile,
+                  icon: CustomIcons.cardprofile,
                   arrowicon: Icons.arrow_forward_ios,
                 ),
                 SizedBox(height: 8),
