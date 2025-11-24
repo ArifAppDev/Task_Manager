@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class CustomIcons {
   //=================basepath==================
   static const String basepathIcon = "assets/icons";
