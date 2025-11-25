@@ -152,7 +152,8 @@ class LoginScreen extends StatelessWidget {
                       //   // Either email or password invalid
                       //   log("Form invalid");
                       // }
-                      Get.toNamed(AppRoutes.homescreen);
+
+                      authController.login();
                     },
                   ),
                 ],

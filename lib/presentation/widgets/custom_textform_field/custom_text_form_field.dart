@@ -14,19 +14,18 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return "Enter your email";
-        } else if (!RegExp(
-          StaticStrings.emailpattern.toString(),
-        ).hasMatch(value)) {
-          return "Enter a valid email address";
-        } else {
-          return null;
-        }
-      },
-
+      // autovalidateMode: AutovalidateMode.onUserInteraction,
+      // validator: (value) {
+      //   if (value == null || value.isEmpty) {
+      //     return "Enter your email";
+      //   } else if (!RegExp(
+      //     StaticStrings.emailpattern.toString(),
+      //   ).hasMatch(value)) {
+      //     return "Enter a valid email address";
+      //   } else {
+      //     return null;
+      //   }
+      // },
       controller: emailcontroller,
       decoration: InputDecoration(
         fillColor: AppColors.softbrandColor,

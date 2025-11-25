@@ -5,7 +5,6 @@ import 'package:get/instance_manager.dart';
 import 'package:task_manager/core/general_controller/general_controller.dart';
 
 import 'package:task_manager/utils/app_color/app_colors.dart';
-import 'package:task_manager/utils/static_string/static_strings.dart';
 
 class CustomPasswordTextField extends StatelessWidget {
   const CustomPasswordTextField({super.key, required this.passwordcontroller});
@@ -18,17 +17,16 @@ class CustomPasswordTextField extends StatelessWidget {
 
     return Obx(
       () => TextFormField(
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return "Enter your email";
-          } else if (!RegExp(
-            StaticStrings.passwordpattern.toString(),
-          ).hasMatch(value)) {
-            return "Enter a valid Password";
-          }
-          return null;
-        },
-
+        // validator: (value) {
+        //   if (value == null || value.isEmpty) {
+        //     return "Enter your email";
+        //   } else if (!RegExp(
+        //     StaticStrings.passwordpattern.toString(),
+        //   ).hasMatch(value)) {
+        //     return "Enter a valid Password";
+        //   }
+        //   return null;
+        // },
         autovalidateMode: AutovalidateMode.onUserInteraction,
 
         controller: passwordcontroller,
