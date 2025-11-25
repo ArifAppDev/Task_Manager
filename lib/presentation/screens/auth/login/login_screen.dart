@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import 'package:task_manager/core/general_controller/general_controller.dart';
 import 'package:task_manager/core/routes/app_routes.dart';
+import 'package:task_manager/presentation/screens/auth/auth_controller/auth_controller.dart';
 
 import 'package:task_manager/presentation/widgets/custom_button/custom_button.dart';
 import 'package:task_manager/presentation/widgets/custom_divider.dart';
@@ -19,9 +20,10 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var formkey = GlobalKey<FormState>();
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passController = TextEditingController();
+
     var generalcontroller = Get.find<GeneralController>();
+    var authController = Get.find<AuthController>();
+
     return Scaffold(
       backgroundColor: AppColors.appbackround,
       body: Center(
@@ -68,12 +70,14 @@ class LoginScreen extends StatelessWidget {
                   // custom Text from field
                   CustomTextFormField(
                     hinttext: 'michelle.rivera@example.com',
-                    emailcontroller: emailController,
+                    emailcontroller: authController.emailController,
                   ),
                   SizedBox(height: 22),
 
                   // custom text from fiels password
-                  CustomPasswordTextField(passwordcontroller: passController),
+                  CustomPasswordTextField(
+                    passwordcontroller: authController.passController,
+                  ),
 
                   SizedBox(height: 15),
 
