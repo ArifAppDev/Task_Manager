@@ -4,6 +4,7 @@ import 'package:task_manager/utils/app_color/app_colors.dart';
 class CustomAppBar extends StatelessWidget {
   final String appbarName;
   final VoidCallback onTap;
+
   const CustomAppBar({
     super.key,
     required this.appbarName,

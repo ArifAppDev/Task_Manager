@@ -57,4 +57,9 @@ class StaticStrings {
   static const String deleteTask = "Delete Task";
   static const String edittask = "Edit Task";
   static const String more = "More";
+  static const String typepassword = "Type Password";
+  static const String newpass = "New password";
+  static const String newconfirmpass = "New Confirm password";
+  static const String faqs = "FAQs";
+  static const String needmorehelp = "Need More Help?";
 }

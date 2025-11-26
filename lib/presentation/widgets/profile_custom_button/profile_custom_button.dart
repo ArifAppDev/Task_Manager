@@ -7,6 +7,7 @@ class ProfileCustomButton extends StatelessWidget {
   final String icon;
   final IconData? arrowicon;
   final Function() onTap;
+
   const ProfileCustomButton({
     super.key,
     required this.title,
@@ -44,8 +45,16 @@ class ProfileCustomButton extends StatelessWidget {
             Row(
               children: [
                 SvgPicture.asset(icon),
+
                 SizedBox(width: 20),
-                Text(title),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: AppColors.bgblack,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
               ],
             ),
 

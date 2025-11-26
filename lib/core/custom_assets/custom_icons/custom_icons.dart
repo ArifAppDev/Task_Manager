@@ -11,7 +11,7 @@ class CustomIcons {
   static const String edittask = '$basepathIcon/edit_task.svg';
   static const String email = '$basepathIcon/email.svg';
   static const String helpsupport = '$basepathIcon/help_support.svg';
-  static const String location = '$basepathIcon/logout.svg';
+  static const String location = '$basepathIcon/location.svg';
   static const String privacy = '$basepathIcon/privacy.svg';
   static const String cardprofile = '$basepathIcon/profilecard.svg';
   static const String settings = '$basepathIcon/settings.svg';
@@ -20,4 +20,5 @@ class CustomIcons {
   static const String addtask = '$basepathIcon/addtask.svg';
   static const String home = '$basepathIcon/home.svg';
   static const String profile = '$basepathIcon/profile.svg';
+  static const String edit = '$basepathIcon/edit.svg';
 }
