@@ -20,8 +20,10 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var formkey = GlobalKey<FormState>();
+    // ================= general ========================
 
     var generalcontroller = Get.find<GeneralController>();
+    //=============== auth =========================
     var authController = Get.find<AuthController>();
 
     return Scaffold(

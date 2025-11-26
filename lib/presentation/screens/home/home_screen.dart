@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
 
-          //==========home card===============
+          //========== home card===============
 
           //================ list view builder =====================
           Expanded(
