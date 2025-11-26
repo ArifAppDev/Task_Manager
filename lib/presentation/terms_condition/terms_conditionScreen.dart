@@ -12,7 +12,7 @@ class TermsConditionscreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 50),
+              SizedBox(height: 40),
               // ============== custom app abr =====================
               CustomAppBar(appbarName: 'Terms & Condition', onTap: () {}),
             ],
