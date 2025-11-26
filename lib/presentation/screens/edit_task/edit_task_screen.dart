@@ -16,7 +16,7 @@ class EditTaskScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 40),
             // ========== custom App Bar ===========
             CustomAppBar(appbarName: 'Edit Task ', onTap: () {}),
             SizedBox(height: 20),

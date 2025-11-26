@@ -23,4 +23,5 @@ class CustomIcons {
   static const String edit = '$basepathIcon/edit.svg';
   static const String changepassword = '$basepathIcon/chapassword.svg';
   static const String deleteprofile = '$basepathIcon/deleteprofile_icon.svg';
+  static const String mailus = '$basepathIcon/mailus.svg';
 }

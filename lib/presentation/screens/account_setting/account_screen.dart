@@ -17,7 +17,7 @@ class AccountScreen extends StatelessWidget {
         child: Column(
           children: [
             ///////====================== custom app bar ==========================
-            SizedBox(height: 50),
+            SizedBox(height: 40),
             CustomAppBar(
               appbarName: 'Account Setting',
               onTap: () {

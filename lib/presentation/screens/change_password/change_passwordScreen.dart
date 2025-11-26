@@ -23,7 +23,7 @@ class ChangePasswordScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // ================== custom app bar ==================
-              SizedBox(height: 50),
+              SizedBox(height: 40),
               CustomAppBar(
                 appbarName: 'Change Password',
                 onTap: () {

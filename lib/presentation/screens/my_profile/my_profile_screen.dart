@@ -19,7 +19,7 @@ class MyProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 40),
             // ================= custom App bar ======================
             Row(
               children: [

@@ -24,7 +24,7 @@ class TaskDetailsScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              SizedBox(height: 50),
+              SizedBox(height: 40),
               //=========== custom app bar ===============
               CustomAppBar(
                 appbarName: 'Add Task ',
