@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
 
 import 'package:task_manager/presentation/screens/help_support/inner_widget/faq_button.dart';
@@ -21,7 +22,12 @@ class HelpSupportscreen extends StatelessWidget {
             children: [
               SizedBox(height: 40),
               //=========================== custom app bar =======================
-              CustomAppBar(appbarName: 'Help/Support', onTap: () {}),
+              CustomAppBar(
+                appbarName: 'Help/Support',
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
               SizedBox(height: 20),
 
               Text(

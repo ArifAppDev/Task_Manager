@@ -27,9 +27,10 @@ class TaskDetailsScreen extends StatelessWidget {
               SizedBox(height: 40),
               //=========== custom app bar ===============
               CustomAppBar(
-                appbarName: 'Add Task ',
+                appbarName: 'Tasks Details',
                 onTap: () {
-                  Get.back();
+                  Navigator.pop(context);
+                  print("Go back to previous page");
                 },
               ),
 

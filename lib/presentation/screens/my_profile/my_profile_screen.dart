@@ -27,7 +27,7 @@ class MyProfileScreen extends StatelessWidget {
                   child: CustomAppBar(
                     appbarName: 'My ProFile',
                     onTap: () {
-                      Get.back();
+                      Navigator.pop(context);
                     },
                   ),
                 ),

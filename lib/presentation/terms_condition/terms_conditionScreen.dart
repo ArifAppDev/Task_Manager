@@ -21,7 +21,7 @@ class TermsConditionscreen extends StatelessWidget {
               CustomAppBar(
                 appbarName: 'Terms & Condition',
                 onTap: () {
-                  Get.back();
+                  Navigator.pop(context);
                 },
               ),
               SizedBox(height: 20),

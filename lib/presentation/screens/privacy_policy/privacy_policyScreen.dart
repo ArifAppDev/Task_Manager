@@ -21,7 +21,7 @@ class PrivacyPolicyscreen extends StatelessWidget {
               CustomAppBar(
                 appbarName: 'Privacy policy',
                 onTap: () {
-                  Get.back();
+                  Navigator.pop(context);
                 },
               ),
               SizedBox(height: 20),

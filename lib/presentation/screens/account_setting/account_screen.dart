@@ -21,7 +21,7 @@ class AccountScreen extends StatelessWidget {
             CustomAppBar(
               appbarName: 'Account Setting',
               onTap: () {
-                Get.back();
+                Navigator.pop(context);
               },
             ),
             SizedBox(height: 20),

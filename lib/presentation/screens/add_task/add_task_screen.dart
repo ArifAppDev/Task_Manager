@@ -20,7 +20,12 @@ class AddTaskScreen extends StatelessWidget {
           children: [
             SizedBox(height: 40),
             // ================== custom app bar ===============
-            CustomAppBar(appbarName: 'Add Task', onTap: () {}),
+            CustomAppBar(
+              appbarName: 'Add Task',
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
             SizedBox(height: 50),
 
             // =========== title section ================
