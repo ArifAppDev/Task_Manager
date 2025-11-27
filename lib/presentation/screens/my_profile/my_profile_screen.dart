@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 
 import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
 

@@ -5,4 +5,5 @@ class ApiUrl {
   // ============================ login ===========================
   static const String login = "$baseUrl/user/login";
   static const String signup = "$baseUrl/user/register";
+  static const String addtask = "$baseUrl/task/create-task";
 }

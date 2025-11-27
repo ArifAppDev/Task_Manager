@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:task_manager/api_service/api_check.dart';
 import 'package:task_manager/api_service/api_url.dart';
 import 'package:task_manager/core/routes/app_routes.dart';
 
@@ -41,6 +42,7 @@ class AuthController extends GetxController {
         print("Token ===========>>>>>>>>>>>>>> ${token.toString()}");
       } else {
         print("Error ===========>>>>>>>>>>>>>> ${response.statusCode}");
+        apiCheck(response.statusCode);
       }
     } catch (e) {
       print("Error ================>>>>>>>>>>>>>>>> $e");

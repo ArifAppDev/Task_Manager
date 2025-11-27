@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:task_manager/presentation/screens/add_task/add_task_controller/add_task_controller.dart';
 
 import 'package:task_manager/presentation/widgets/custom_app_bar/custom_app_bar.dart';
 import 'package:task_manager/presentation/widgets/custom_button/custom_button.dart';
@@ -11,6 +14,7 @@ class AddTaskScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var addTaskcontroller = Get.find<AddTaskController>();
     return Scaffold(
       bottomNavigationBar: CustomNavBar(selectedIndex: 1),
       body: SingleChildScrollView(
@@ -38,7 +42,7 @@ class AddTaskScreen extends StatelessWidget {
             //  ========= texf form field ==============
             CustomTextFormField(
               hinttext: 'e.g. Design Landing Page Header',
-              emailcontroller: TextEditingController(),
+              emailcontroller: addTaskcontroller.titleController,
             ),
             SizedBox(height: 24),
 
@@ -52,12 +56,17 @@ class AddTaskScreen extends StatelessWidget {
             //  ========= texf form field ==============
             CustomTextFormField(
               hinttext: 'e.g. Design Landing Page Header',
-              emailcontroller: TextEditingController(),
+              emailcontroller: addTaskcontroller.descriptionController,
             ),
             const SizedBox(height: 24),
 
             // ========== custom Button ==============
-            CustomButton(title: 'Save Task', onTap: () {}),
+            CustomButton(
+              title: 'Save Task',
+              onTap: () {
+                addTaskcontroller.addTask();
+              },
+            ),
           ],
         ),
       ),
