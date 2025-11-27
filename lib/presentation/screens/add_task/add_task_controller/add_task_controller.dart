@@ -35,12 +35,17 @@ class AddTaskController extends GetxController {
       if (response.statusCode == 201) {
         var decodedResponse = jsonDecode(response.body);
         Get.snackbar(decodedResponse["status"], decodedResponse["message"]);
-        print("created ===========>>>>>>>>>>>>>>>> task");
+        clearText();
       } else {
         apiCheck(response.statusCode);
       }
     } catch (error) {
       print("Error ===========>>>>>>>>>>>>>>>> $error");
     }
+  }
+
+  clearText() {
+    titleController.clear();
+    descriptionController.clear();
   }
 }

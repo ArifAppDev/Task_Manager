@@ -1,4 +1,12 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:task_manager/api_service/api_check.dart';
+import 'package:task_manager/api_service/api_url.dart';
+
+import 'package:task_manager/presentation/screens/home/model/task_model.dart';
 
 class HomeController extends GetxController {
   RxList<Map<String, dynamic>> taskDetails = [
@@ -29,18 +37,36 @@ class HomeController extends GetxController {
     },
   ].obs;
 
-  // // ============== remove task ===============
-  // void removeTask(int index) {
-  //   if (index >= 0 && index < taskDetails.length) {
-  //     taskDetails.removeAt(index);
-  //   }
-  // }
+  Rx<TaskModel> taskModel = TaskModel().obs;
+  RxBool isloading = false.obs;
 
-  // // ============ update task ================
-  // void updateTask(int index, String newtitle, String newdescription) {
-  //   if (index >= 0 && index < taskDetails.length) {
-  //     taskDetails[index] = {'title': newtitle, 'des': newdescription};
-  //     taskDetails.refresh();
-  //   }
-  // }
+  //=========================== Get task model ====================
+  getTask() async {
+    isloading = true.obs;
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? token = prefs.getString('token');
+
+    try {
+      var header = {
+        "Content-Type": "application/json",
+        "Authorization": 'Bearer $token',
+      };
+
+      var response = await http.get(Uri.parse(ApiUrl.gettask), headers: header);
+
+      if (response.statusCode == 200) {
+        taskModel.value = TaskModel.fromJson(jsonDecode(response.body));
+        isloading = false.obs;
+      } else {
+        apiCheck(response.statusCode);
+        isloading = false.obs;
+      }
+    } catch (error) {}
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    getTask();
+  }
 }

@@ -13,6 +13,6 @@ class DependencyInjection extends Bindings {
     // ===================== Auth ===================
     Get.lazyPut<AuthController>(() => AuthController());
     //======================= add Task ================
-    Get.lazyPut<AddTaskController>(() => AddTaskController());
+    Get.lazyPut<AddTaskController>(() => AddTaskController(), fenix: true);
   }
 }

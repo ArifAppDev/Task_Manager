@@ -5,7 +5,7 @@ import 'package:task_manager/presentation/screens/home/home_controller/home_cont
 import 'package:task_manager/presentation/screens/home/inner_widget/home_card/home_card.dart';
 
 import 'package:task_manager/presentation/screens/home/inner_widget/home_profile_section/home_profile_section.dart';
-import 'package:task_manager/presentation/screens/task_details/task_details_screen.dart';
+
 import 'package:task_manager/presentation/widgets/custom_nav_bar/custom_nav_bar.dart';
 
 import 'package:task_manager/utils/app_color/app_colors.dart';
@@ -21,49 +21,62 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       bottomNavigationBar: CustomNavBar(selectedIndex: 0),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //======================== profile section =============================
-          ProfileSection(),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //======================== profile section =============================
+            ProfileSection(),
 
-          SizedBox(height: 24),
+            SizedBox(height: 24),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              StaticStrings.mytask,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: AppColors.bgblack,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                StaticStrings.mytask,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.bgblack,
+                ),
               ),
             ),
-          ),
 
-          //========== home card===============
+            //========== home card===============
 
-          //================ list view builder =====================
-          Expanded(
-            child: Obx(
-              () => ListView.builder(
-                itemCount: homeController.taskDetails.length,
-                itemBuilder: (context, index) {
-                  //       //==========home card===============
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: HomeCard(
-                      onTap: () {
-                        Get.to(() => TaskDetailsScreen(index: index));
-                      },
-                      index: index,
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-        ],
+            //================ list view builder =====================
+            Obx(() {
+              return homeController.isloading.value == true
+                  ? Center(child: CircularProgressIndicator())
+                  : Column(
+                      children: List.generate(
+                        homeController.taskModel.value.data!.myTasks!.length,
+                        (index) {
+                          return HomeCard(
+                            onTap: () {},
+                            title:
+                                homeController
+                                    .taskModel
+                                    .value
+                                    .data!
+                                    .myTasks![index]
+                                    .title ??
+                                "",
+                            description:
+                                homeController
+                                    .taskModel
+                                    .value
+                                    .data!
+                                    .myTasks![index]
+                                    .description ??
+                                "",
+                          );
+                        },
+                      ),
+                    );
+            }),
+          ],
+        ),
       ),
     );
   }
