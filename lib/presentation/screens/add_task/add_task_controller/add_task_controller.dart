@@ -6,10 +6,14 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:task_manager/api_service/api_check.dart';
 import 'package:task_manager/api_service/api_url.dart';
+import 'package:task_manager/presentation/screens/home/home_controller/home_controller.dart';
 
 class AddTaskController extends GetxController {
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
+
+  // This allows access to the controller state's and logic
+  var homeController = Get.find<HomeController>();
 
   addTask() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -36,6 +40,7 @@ class AddTaskController extends GetxController {
         var decodedResponse = jsonDecode(response.body);
         Get.snackbar(decodedResponse["status"], decodedResponse["message"]);
         clearText();
+        homeController.getTask();
       } else {
         apiCheck(response.statusCode);
       }
