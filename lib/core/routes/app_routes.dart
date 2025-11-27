@@ -17,7 +17,7 @@ import 'package:task_manager/presentation/screens/onboarding/onboarding.dart';
 import 'package:task_manager/presentation/screens/privacy_policy/privacy_policyScreen.dart';
 import 'package:task_manager/presentation/screens/profile/profile_screen.dart';
 import 'package:task_manager/presentation/screens/splash_screen/splash_screen.dart';
-import 'package:task_manager/presentation/terms_condition/terms_conditionScreen.dart';
+import 'package:task_manager/presentation/screens/terms_condition/terms_condition_screen.dart';
 
 class AppRoutes {
   static const String splashscreen = '/splashscreen';

@@ -12,7 +12,8 @@ class AuthController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
-  // ======================= login method ==================
+  //// ================== Login Method ===================
+
   void login() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
@@ -21,31 +22,35 @@ class AuthController extends GetxController {
         "password": passController.text,
       };
 
-      var header = {"Content-Type": "application/json"};
+      var header = {
+        "Content-Type": "application/json",
+        // "Authorization": passController.text,
+      };
+
+      print("body ==============>>>>>> $body");
 
       var response = await http.post(
+        headers: header,
         Uri.parse(ApiUrl.login),
         body: jsonEncode(body),
-        headers: header,
       );
-      print("body ===========>>>>>>>>>>>>>> $body");
 
       if (response.statusCode == 200) {
         var decodedResponse = jsonDecode(response.body);
         await prefs.setString('token', decodedResponse["data"]["token"]);
-
         Get.toNamed(AppRoutes.homescreen);
 
         Get.snackbar(decodedResponse["status"], decodedResponse["message"]);
 
         final String? token = prefs.getString('token');
-        print("Token ===========>>>>>>>>>>>>>> ${token.toString()}");
+
+        print("Token ==============>>>>>> ${token.toString()}");
       } else {
-        print("Error ===========>>>>>>>>>>>>>> ${response.statusCode}");
+        print("Error ==============>>>>>> ${response.statusCode}");
         apiCheck(response.statusCode);
       }
     } catch (e) {
-      print("Error ================>>>>>>>>>>>>>>>> $e");
+      print("Error ==============>>>>>> $e");
     }
   }
 }

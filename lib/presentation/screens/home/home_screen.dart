@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_manager/core/routes/app_routes.dart';
 
 import 'package:task_manager/presentation/screens/home/home_controller/home_controller.dart';
 import 'package:task_manager/presentation/screens/home/inner_widget/home_card/home_card.dart';
@@ -43,33 +44,24 @@ class HomeScreen extends StatelessWidget {
             ),
 
             //========== home card===============
-
-            //================ list view builder =====================
             Obx(() {
-              return homeController.isloading.value == true
+              return homeController.isLoading.value == true
                   ? Center(child: CircularProgressIndicator())
                   : Column(
                       children: List.generate(
                         homeController.taskModel.value.data!.myTasks!.length,
                         (index) {
+                          var data = homeController
+                              .taskModel
+                              .value
+                              .data!
+                              .myTasks![index];
                           return HomeCard(
-                            onTap: () {},
-                            title:
-                                homeController
-                                    .taskModel
-                                    .value
-                                    .data!
-                                    .myTasks![index]
-                                    .title ??
-                                "",
-                            description:
-                                homeController
-                                    .taskModel
-                                    .value
-                                    .data!
-                                    .myTasks![index]
-                                    .description ??
-                                "",
+                            title: data.title ?? "",
+                            description: data.description ?? "",
+                            onTap: () {
+                              Get.toNamed(AppRoutes.taskdetailsscreen);
+                            },
                           );
                         },
                       ),

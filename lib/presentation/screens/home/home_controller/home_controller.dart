@@ -38,12 +38,12 @@ class HomeController extends GetxController {
   ].obs;
 
   Rx<TaskModel> taskModel = TaskModel().obs;
-  RxBool isloading = false.obs;
+  RxBool isLoading = false.obs;
 
-  //=========================== Get task model ====================
   getTask() async {
-    isloading = true.obs;
+    isLoading.value = true;
     final SharedPreferences prefs = await SharedPreferences.getInstance();
+
     final String? token = prefs.getString('token');
 
     try {
@@ -52,21 +52,23 @@ class HomeController extends GetxController {
         "Authorization": 'Bearer $token',
       };
 
-      var response = await http.get(Uri.parse(ApiUrl.gettask), headers: header);
+      var response = await http.get(headers: header, Uri.parse(ApiUrl.gettask));
 
       if (response.statusCode == 200) {
         taskModel.value = TaskModel.fromJson(jsonDecode(response.body));
-        isloading = false.obs;
+
+        isLoading.value = false;
       } else {
         apiCheck(response.statusCode);
-        isloading = false.obs;
+
+        isLoading.value = false;
       }
     } catch (error) {}
   }
 
   @override
   void onInit() {
-    super.onInit();
     getTask();
+    super.onInit();
   }
 }
